@@ -93,3 +93,7 @@ input:focus {
 .not-found {
   color: tomato;
 }
+
+span {
+  text-align: center;
+}

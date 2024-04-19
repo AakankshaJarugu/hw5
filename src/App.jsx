@@ -3,21 +3,15 @@ import { fetchData } from './controller/activity-controller';
 
 function App() {
   const [data, setData] = useState(null);
-  const [activityType, setActivityType] = useState('');
 
-  const onClick = async () => setData(await fetchData(activityType));
-
-  const onChange = async (e) => {
-    setActivityType(e.target.value);
-  };
+  const onClick = async () => setData(await fetchData());
 
   return (
     <div className="card">
 
-      <label htmlFor="type">
-        Type in the type of activity you prefer below:
-        <input type="text" id="type" onChange={onChange} />
-      </label>
+      {
+        data && <span>{data.type}</span>
+      }
 
       {
         data &&
